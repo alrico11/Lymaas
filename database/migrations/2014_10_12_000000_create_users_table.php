@@ -24,15 +24,14 @@ class CreateUsersTable extends Migration
             $table->string('avatar', 255)->default('uploads/avatar/avatar.png');
             $table->string('address', 255)->default('Indonesia');
             $table->string('country', 255)->default('Indonesia');
+            $table->string('phone')->nullable();
+            $table->tinyInteger('dark_mode')->default(0);
+            $table->string('social_type', 255)->nullable();
             $table->string('messenger_color', 255)->default('#2180f3');
             $table->tinyInteger('active_status')->default(1);
             $table->string('country_code')->nullable();
             $table->timestamp('phone_verified_at')->nullable();
-            $table->string('phone')->nullable();
-            $table->tinyInteger('dark_mode')->default(0);
             $table->string('lang')->default('en');
-            $table->string('social_type', 255);
-            $table->text('api_token')->nullable();
             $table->timestamps();
         });
     }
