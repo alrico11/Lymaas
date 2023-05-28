@@ -32,6 +32,7 @@ class CreateUsersTable extends Migration
             $table->tinyInteger('dark_mode')->default(0);
             $table->string('lang')->default('en');
             $table->string('social_type', 255);
+            $table->text('api_token')->nullable();
             $table->timestamps();
         });
     }
