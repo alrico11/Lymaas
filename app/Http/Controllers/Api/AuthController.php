@@ -66,7 +66,6 @@ class AuthController extends Controller
             return response()->json([
                 'success' => false,
                 'message' => 'Gagal Login',
-                'data' => null,
             ]);
         }
     }
@@ -78,7 +77,6 @@ class AuthController extends Controller
         return response()->json([
             'success' => true,
             'message' => 'Logout Success',
-            'data' => null,
         ]);
     }
 
