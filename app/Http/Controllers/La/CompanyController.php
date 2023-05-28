@@ -78,7 +78,7 @@ class CompanyController extends Controller
         return response()->json(
             [
                 'success' => true,
-                'data' => $country,
+                'data' => $company,
             ],
             200
         );

@@ -119,7 +119,7 @@ class BrokerController extends Controller
 
         $broker = Broker::find($id);
         if (!empty($broker)) {
-            $company->update($request->all());
+            $broker->update($request->all());
 
             return response()->json(
                 [
