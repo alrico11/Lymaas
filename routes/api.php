@@ -6,6 +6,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\La\BrokerController;
 use App\Http\Controllers\La\CompanyController;
+use App\Http\Controllers\La\VendorController;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -19,12 +21,13 @@ use App\Http\Controllers\La\CompanyController;
 
 //Route::post('register', [AuthController::class, 'register']);
 
+Route::apiResource('vendor', VendorController::class);
+Route::apiResource('company', CompanyController::class);
 Route::prefix('la')->group(function () {
     Route::post('login', [AuthController::class, 'login']);
     Route::middleware('auth:sanctum')->group(function () {
         Route::post('logout', [AuthController::class, 'logout']);
         Route::apiResource('users', UserController::class);
-        Route::apiResource('company', CompanyController::class);
         Route::apiResource('broker', BrokerController::class);
     });
 });
