@@ -1,10 +1,9 @@
-version: 1
-metadata:
-  description: Konfigurasi deployment otomatis proyek Laravel
-  author: John Doe
-  version: 1.0
-  contact_email: john.doe@example.com
-setup:
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/example/public_html/
+    - /bin/cp -r * $DEPLOYPATH
+ setup:
   - command: "composer install --no-dev"
     cwd: ""
   - command: "php artisan key:generate"
