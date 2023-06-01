@@ -1,6 +1,20 @@
----
-deployment:
-  tasks:
-    - export DEPLOYPATH=/home/silvani/public_html/
-    - /bin/cp index.html $DEPLOYPATH
-    - /bin/cp style.css $DEPLOYPATH
+version: 1
+metadata:
+  description: Konfigurasi deployment otomatis proyek Laravel
+  author: John Doe
+  version: 1.0
+  contact_email: john.doe@example.com
+setup:
+  - command: "composer install --no-dev"
+    cwd: ""
+  - command: "php artisan key:generate"
+    cwd: ""
+  - command: "php artisan migrate"
+    cwd: ""
+deploy:
+  - command: "git pull origin master"
+    cwd: ""
+  - command: "composer install --no-dev"
+    cwd: ""
+  - command: "php artisan migrate"
+    cwd: ""
